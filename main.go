@@ -37,7 +37,6 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/Sirupsen/logrus"
 	auth_pb "github.com/arsonistgopher/junos-openconfig-telemetry-testclient/proto/auth"
 	oct_pb "github.com/arsonistgopher/junos-openconfig-telemetry-testclient/telemetry"
 	"golang.org/x/crypto/ssh/terminal"
@@ -245,7 +244,7 @@ func main() {
 
 		// Err
 		if err != nil {
-			logrus.Fatalf("%v.TelemetrySubscribe(_) = _, %v", conn, err)
+			log.Fatalf("%v.TelemetrySubscribe(_) = _, %v", conn, err)
 		}
 
 		// Go and process a lovely ocData pkt
